@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jilfond</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/styles.css">
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <header class="header">
+      <h1>Жилфонд</h1>
+      <p>Пользователь</p>
+    </header>
+    <main class="main-space">
+      <div class="sidebar">
+        <div class="sidebar_title">Поиск сотрудников</div>
+        <input class="sidebar_import" type="text" placeholder="Введите id или имя">
+        <div class="sidebar_title">Результаты</div>
+        <div class="sidebar_search">Начните поиск</div>
+      </div>
+      <div class="worker-card">
+        <div class="worker-card_search">Выберите сотрудника, чтобы посмотреть его профиль</div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./main.js"></script>
+  <script>
+    const mountedApp = app.mount('#app')
+  </script>
+</body>
+
+</html>
