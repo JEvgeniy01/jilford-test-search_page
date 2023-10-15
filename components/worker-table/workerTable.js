@@ -29,17 +29,16 @@ app.component("worker-table", {
         color: "#333",
         fontWeight: "600",
         marginLeft: "15px",
+        cursor: "pointer",
       },
       table_info_email: {
         color: "#76787d",
         marginTop: "5px",
         marginLeft: "15px",
-      },
-      table_info_active: {
-        background: "#E0E0E0",
+        cursor: "pointer",
       },
       //Конец стилей для компонента таблички работника
-      hrefProfile: '../../images/profile_min.png'
+      hrefProfile: "../../images/profile_min.png",
     };
   },
   props: {
@@ -47,11 +46,18 @@ app.component("worker-table", {
   },
   template:
     /*html*/
-    `<div :style="table" v-on:click="$emit('selectWorker')">
-      <div :style="table_image"><img :style="table_image__img" v-bind:src="hrefProfile"></div>
-      <div :style="table_info">
-        <div :style="table_info_name">{{user.name}}</div>
-        <div :style="table_info_email">{{user.email}}</div>
+    `
+      <div :style="table">
+        <div :style="table_image"><img :style="table_image__img" v-bind:src="hrefProfile" ></div>
+        <div :style="table_info" >
+          <div :style="table_info_name" v-on:click="selectWorker" >{{user.name}}</div>
+          <div :style="table_info_email" v-on:click="selectWorker" >{{user.email}}</div>
+        </div>
       </div>
-    </div>`,
+    `,
+  methods: {
+    selectWorker(event) {
+      this.$emit("select", event.target.textContent);
+    },
+  },
 });

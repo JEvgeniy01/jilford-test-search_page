@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/styles.css">
 
-  <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src ="https://unpkg.com/vuex"></script>
 </head>
 
 <body>
@@ -27,10 +28,14 @@
         <div class="sidebar_search">
           <!-- Здесь вставить компоненты табличек пользователей -->
           <!-- <p>Начните поиск</p> -->
-          <worker-table v-for="user of users" v-bind:user='user' v-on:select-worker="selectWorker"></worker-table>
+          <worker-table 
+          v-for='user of users' 
+          v-bind:key="user.id"
+          v-bind:user='user'
+          v-on:select="selectWorker"></worker-table>
         </div>
       </div>
-      <worker-card v-if="userCard">
+      <worker-card v-if="userCard" v-bind:user="showUserCard">
 
       </worker-card>
       <div class='worker-card' v-else>

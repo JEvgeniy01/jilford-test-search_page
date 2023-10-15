@@ -63,7 +63,7 @@ app.component("worker-card", {
       hrefProfile: '../../images/profile.webp',
     }
   },
-  pops: {
+  props: {
     user: Object,
   },
   template:
@@ -73,10 +73,10 @@ app.component("worker-card", {
           <img :style="container_picture__img" v-bind:src="hrefProfile" alt="profile photo">
         </div>
         <div :style="container_info">
-          <div :style="container_info__name">Johnny</div>
-          <div :style="container_info__email">email <span :style='container_info__data'>@mail.ru</span></div>
-          <div :style="container_info__phone">phone: <span :style='container_info__data'>12398234</span></div>
-          <div :style="container_title">new title</div>
+          <div :style="container_info__name">{{user.name}}</div>
+          <div :style="container_info__email">email:<span :style='container_info__data'>{{user.email}}</span></div>
+          <div :style="container_info__phone">phone:<span :style='container_info__data'>{{user.phone}}</span></div>
+          <div :style="container_title">О себе</div>
           <div :style="container_about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
           laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
           esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
