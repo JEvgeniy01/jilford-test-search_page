@@ -116,6 +116,9 @@ table {
   margin-left: 20px;
 }
 .sidebar_search {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   color: #76787d;
   font-size: 14px;
   line-height: normal;
@@ -125,6 +128,9 @@ table {
 
 .worker-card {
   width: 975px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 0px 10px 10px 0px;
   border-left: 1px solid #dededd;
   background: #fff;
@@ -134,7 +140,6 @@ table {
   color: #76787d;
   font-size: 14px;
   line-height: normal;
-  margin-top: 250px;
 }
 
 /*# sourceMappingURL=styles.css.map */

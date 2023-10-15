@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jilfond</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/styles.css">
 
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
 </head>
 
 <body>
@@ -24,15 +24,25 @@
         <div class="sidebar_title">Поиск сотрудников</div>
         <input class="sidebar_import" type="text" placeholder="Введите id или имя">
         <div class="sidebar_title">Результаты</div>
-        <div class="sidebar_search">Начните поиск</div>
+        <div class="sidebar_search">
+          <!-- Здесь вставить компоненты табличек пользователей -->
+          <!-- <p>Начните поиск</p> -->
+          <worker-table v-for="user of users" v-bind:user='user' v-on:select-worker="selectWorker"></worker-table>
+        </div>
       </div>
-      <div class="worker-card">
+      <worker-card v-if="userCard">
+
+      </worker-card>
+      <div class='worker-card' v-else>
         <div class="worker-card_search">Выберите сотрудника, чтобы посмотреть его профиль</div>
       </div>
     </main>
   </div>
 
+
   <script src="./main.js"></script>
+  <script src="./components/worker-table/workerTable.js"></script>
+  <script src="./components/worker-card/workerCard.js"></script>
   <script>
     const mountedApp = app.mount('#app')
   </script>
