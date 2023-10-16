@@ -1,12 +1,13 @@
-
-
-
 const app = Vue.createApp({
   data() {
     return {
       users: [],
       userCard: false,
       showUserCard: "",
+      isError: false,
+      isUsersLoading: false,
+      startSearch: true,
+      isTable: false,
     };
   },
   methods: {
@@ -26,15 +27,20 @@ const app = Vue.createApp({
     },
     async fetchUsers() {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users')
-        this.users = response.data
-        // const user = await response.json();
-        
+        this.startSearch = false;
+        this.isTable = true;
+        this.isUsersLoading = true;
+        const response = await axios.get(
+          "https://jsonplaceholder.typicode.com/users?id=1&id=2&id=3"
+        );
+        this.users = response.data;
       } catch (e) {
         console.log(e);
-        alert('Произошла ошибка')
+        this.isError = true;
+        this
+      } finally {
+        this.isUsersLoading = false;
       }
-    }
+    },
   },
 });
-

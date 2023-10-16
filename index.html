@@ -28,18 +28,21 @@
         <input class="sidebar_import" type="text" placeholder="Введите id или имя">
         <div class="sidebar_title">Результаты</div>
         <div class="sidebar_search">
-          <!-- Здесь вставить компоненты табличек пользователей -->
           <!-- <p>Начните поиск</p> -->
-          <worker-table 
+          <div v-if='startSearch' class="worker-card_search">начните поиск</div>
+           <div v-else-if="isError" class="worker-card_search">ничего не найдено</div>
+          <template v-else-if="isTable">
+          <worker-table v-if="!isUsersLoading" 
           v-for='user of users' 
           v-bind:key="user.id"
           v-bind:user='user'
           v-on:select="selectWorker"></worker-table>
+          <div class="sidebar_title" v-else>Идет загрузка...</div>
+          </template>
+         
         </div>
       </div>
-      <worker-card v-if="userCard" v-bind:user="showUserCard">
-
-      </worker-card>
+      <worker-card v-if="userCard" v-bind:user="showUserCard"></worker-card>
       <div class='worker-card' v-else>
         <div class="worker-card_search">Выберите сотрудника, чтобы посмотреть его профиль</div>
       </div>
