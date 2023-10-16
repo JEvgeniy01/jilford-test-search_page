@@ -141,6 +141,11 @@ table {
   font-size: 14px;
   line-height: normal;
 }
+/* .active {
+  background: #E0E0E0;
+  border-radius: 0px 10px 10px 0px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
 
+} */
 
 /*# sourceMappingURL=styles.css.map */

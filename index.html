@@ -9,9 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/styles.css">
-
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/vue@next"></script>
   <script src ="https://unpkg.com/vuex"></script>
+  
 </head>
 
 <body>
@@ -23,6 +24,7 @@
     <main class="main-space">
       <div class="sidebar">
         <div class="sidebar_title">Поиск сотрудников</div>
+        <button v-on:click="fetchUsers">Получить пользователей</button>
         <input class="sidebar_import" type="text" placeholder="Введите id или имя">
         <div class="sidebar_title">Результаты</div>
         <div class="sidebar_search">
