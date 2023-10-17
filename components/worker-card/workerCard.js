@@ -3,15 +3,15 @@ app.component("worker-card", {
     return {
       //Стили для компонента карты профиля работника
       container: {
-        width: '975px',
+        width: "975px",
         display: "flex",
         justifyContent: "space-between",
         fontFamily: '"Montserrat", sans-serif',
-        borderLeft: '1px solid #dededd'
+        borderLeft: "1px solid #dededd",
       },
       container_picture: {
         marginLeft: "21px",
-        marginTop: '20px'
+        marginTop: "20px",
       },
       container_picture__img: {
         width: "424px",
@@ -28,7 +28,7 @@ app.component("worker-card", {
         color: "#000",
         fontSize: "16px",
         fontWeight: "600",
-        marginTop: '20px'
+        marginTop: "20px",
       },
       container_info__email: {
         color: "#333",
@@ -43,7 +43,7 @@ app.component("worker-card", {
       container_info__data: {
         color: "#76787D",
         fontWeight: "400",
-        marginLeft: '15px'
+        marginLeft: "15px",
       },
       container_title: {
         color: "#333",
@@ -59,9 +59,9 @@ app.component("worker-card", {
         fontSize: "14px",
         lineHeight: "normal",
       },
-       //Конец стилей для компонента карты профиля работника
-      hrefProfile: '../../images/profile.webp',
-    }
+      //Конец стилей для компонента карты профиля работника
+      hrefProfile: "../../images/profile.webp",
+    };
   },
   props: {
     user: Object,
@@ -85,5 +85,4 @@ app.component("worker-card", {
         </div>
       </div>
   `,
-  methods: {},
 });
